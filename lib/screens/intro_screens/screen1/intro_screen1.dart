@@ -1,7 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/const/resource.dart';
-import 'package:onboarding/screens/intro_widget.dart';
+import 'package:onboarding/screens/intro_screens/screen1/intro_widget.dart';
+import 'package:onboarding/utils/shared_list.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -11,20 +12,20 @@ class AppScrollBehavior extends MaterialScrollBehavior {
       };
 }
 
-class IntroScreen extends StatefulWidget {
-  const IntroScreen({super.key});
+class IntroScreen1 extends StatefulWidget {
+  const IntroScreen1({super.key});
 
   @override
-  State<IntroScreen> createState() => _IntroScreenState();
+  State<IntroScreen1> createState() => _IntroScreen1State();
 }
 
-class _IntroScreenState extends State<IntroScreen> {
+class _IntroScreen1State extends State<IntroScreen1> {
   final PageController _pageController = PageController();
 
   int _activePage = 0;
 
   void onNextPage() {
-    if (_activePage < _pages.length - 1) {
+    if (_activePage < pages.length - 1) {
       _pageController.nextPage(
         duration: const Duration(milliseconds: 500),
         curve: Curves.fastEaseInToSlowEaseOut,
@@ -33,35 +34,8 @@ class _IntroScreenState extends State<IntroScreen> {
   }
 
   void onSkip() {
-    _pageController.jumpToPage(_pages.length - 1);
+    _pageController.jumpToPage(pages.length - 1);
   }
-
-  final List<Map<String, dynamic>> _pages = [
-    {
-      'color': '#ffe24e',
-      'title': 'Studying all day',
-      'image': R.ASSETS_SVG_STUDYING_BRO_SVG,
-      'description':
-          "Study all day with comfortable food and drink options. Fresh taste always accompanies you.",
-      'skip': true
-    },
-    {
-      'color': '#a3e4f1',
-      'title': 'Study by yourself',
-      'image': R.ASSETS_SVG_STUDYING_RAFIKI_SVG,
-      'description':
-          'Study with a variety of food and drink options. Fresh taste always accompanies you.',
-      'skip': true
-    },
-    {
-      'color': '#31b77a',
-      'title': 'Study with friends',
-      'image': R.ASSETS_SVG_RESEARCH_PAPER_RAFIKI_SVG,
-      'description':
-          'Study with a lot of food and drink options. Fresh taste always accompanies you.',
-      'skip': false
-    },
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -70,7 +44,7 @@ class _IntroScreenState extends State<IntroScreen> {
         children: [
           PageView.builder(
               controller: _pageController,
-              itemCount: _pages.length,
+              itemCount: pages.length,
               scrollBehavior: AppScrollBehavior(),
               onPageChanged: (int page) {
                 setState(() {
@@ -80,11 +54,11 @@ class _IntroScreenState extends State<IntroScreen> {
               itemBuilder: (BuildContext context, int index) {
                 return IntroWidget(
                   index: index,
-                  color: _pages[index]['color'],
-                  title: _pages[index]['title'],
-                  description: _pages[index]['description'],
-                  image: _pages[index]['image'],
-                  skip: _pages[index]['skip'],
+                  color: pages[index]['color'],
+                  title: pages[index]['title'],
+                  description: pages[index]['description'],
+                  image: pages[index]['image'],
+                  skip: pages[index]['skip'],
                   onTab: onNextPage,
                   onSkip: onSkip,
                 );
@@ -109,7 +83,7 @@ class _IntroScreenState extends State<IntroScreen> {
   List<Widget> _buildIndicator() {
     final indicators = <Widget>[];
 
-    for (var i = 0; i < _pages.length; i++) {
+    for (var i = 0; i < pages.length; i++) {
       if (_activePage == i) {
         indicators.add(_indicatorsTrue());
       } else {

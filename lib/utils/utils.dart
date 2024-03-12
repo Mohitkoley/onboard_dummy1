@@ -18,4 +18,15 @@ extension ContextExt on BuildContext {
     final brightness = MediaQuery.of(this).platformBrightness;
     return brightness == Brightness.dark;
   }
+
+  ColorScheme get colorScheme => theme.colorScheme;
+
+  Color get schemeBackroundColor => colorScheme.background;
+
+  Color get primaryColor => colorScheme.primary;
+
+  //Navigators
+  void navigateTo(Widget screen) {
+    Navigator.of(this).push(MaterialPageRoute(builder: (context) => screen));
+  }
 }
