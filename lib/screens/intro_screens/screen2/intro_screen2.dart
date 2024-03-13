@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:onboarding/const/resource.dart';
 import 'package:onboarding/theme/colors.dart';
-import 'package:onboarding/utils/shared_list.dart';
+import 'package:onboarding/models/intro_pages.dart';
 import 'package:onboarding/utils/utils.dart';
 
 class IntroScreen2 extends StatefulWidget {
@@ -142,7 +141,7 @@ class _IntroScreen2State extends State<IntroScreen2>
                           },
                           child: Text("Skip",
                               style: context.textTheme.bodyMedium!
-                                  .copyWith(color: secondryColor)),
+                                  .copyWith(color: AppColors.secondryColor)),
                         ),
                       // _nextButton("Next", context, () {})
                       NextButton(
@@ -158,14 +157,17 @@ class _IntroScreen2State extends State<IntroScreen2>
     );
   }
 
-  _titleText(
+  Widget _titleText(
     String title,
     BuildContext context,
   ) {
-    return _slidingAnimaiton(Text(
-      title,
-      style: context.textTheme.bodyLarge!
-          .copyWith(fontWeight: FontWeight.bold, fontSize: 30),
+    return _slidingAnimaiton(SizedBox(
+      width: context.width * 0.8,
+      child: Text(
+        title,
+        style: context.textTheme.bodyLarge!.copyWith(
+            fontWeight: FontWeight.bold, fontSize: context.width * 0.08),
+      ),
     ));
   }
 
@@ -196,7 +198,7 @@ class _IntroScreen2State extends State<IntroScreen2>
       width: isCurrent ? 30 : 10,
       height: 8,
       decoration: BoxDecoration(
-        color: isCurrent ? primaryColor : Colors.grey,
+        color: isCurrent ? AppColors.primaryColor : Colors.grey,
         borderRadius: BorderRadius.circular(10),
       ),
     );
@@ -218,7 +220,7 @@ class NextButton extends StatelessWidget {
     return Expanded(
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          minimumSize: Size(0, 50),
+          minimumSize: const Size(0, 50),
         ),
         onPressed: () {
           _pageController.nextPage(
@@ -230,7 +232,7 @@ class NextButton extends StatelessWidget {
             style: context.textTheme.bodyLarge!.copyWith(
                 height: 1.5,
                 fontWeight: FontWeight.w400,
-                color: context.isDarkMode ? black : white)),
+                color: context.isDarkMode ? AppColors.black : AppColors.white)),
       ),
     );
   }

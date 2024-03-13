@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'package:onboarding/screens/intro_screens/screen1/intro_screen1.dart';
 import 'package:onboarding/screens/intro_screens/screen2/intro_screen2.dart';
-import 'package:onboarding/theme/colors.dart';
+import 'package:onboarding/screens/intro_screens/screen3/intro_screen3.dart';
+
 import 'package:onboarding/utils/utils.dart';
 
 class OnBoardScreensList extends StatefulWidget {
@@ -34,7 +35,10 @@ class _OnBoardScreensListState extends State<OnBoardScreensList> {
                     MaterialPageRoute(builder: (context) => IntroScreen1()))),
             ScreenButton(
                 title: "intro 2",
-                onPressed: () => context.navigateTo(IntroScreen2()))
+                onPressed: () => context.navigateTo(IntroScreen2())),
+            ScreenButton(
+                title: "intro 3",
+                onPressed: () => context.navigateTo(IntroScreen3())),
           ],
         ),
       ),

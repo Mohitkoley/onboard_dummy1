@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:onboarding/const/resource.dart';
 import 'package:onboarding/screens/intro_screens/screen1/intro_widget.dart';
-import 'package:onboarding/utils/shared_list.dart';
+import 'package:onboarding/models/intro_pages.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override

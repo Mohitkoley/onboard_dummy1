@@ -30,3 +30,9 @@ extension ContextExt on BuildContext {
     Navigator.of(this).push(MaterialPageRoute(builder: (context) => screen));
   }
 }
+
+extension DoubleExt on num {
+  Widget get hBox => SizedBox(height: toDouble());
+  Widget get wBox => SizedBox(width: toDouble());
+  Widget get hwBox => SizedBox(height: toDouble(), width: toDouble());
+}
