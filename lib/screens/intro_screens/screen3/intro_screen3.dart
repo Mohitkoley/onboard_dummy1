@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:onboarding/models/intro_pages.dart';
 import 'package:onboarding/screens/intro_screens/screen3/intro_widget3.dart';
 import 'package:onboarding/theme/colors.dart';

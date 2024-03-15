@@ -1,8 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:onboarding/const/resource.dart';
-import 'package:onboarding/screens/intro_screens/screen1/intro_widget.dart';
+import 'package:onboarding/screens/intro_screens/screen1/intro_widget1.dart';
 import 'package:onboarding/models/intro_pages.dart';
+import 'package:onboarding/theme/colors.dart';
 
 class AppScrollBehavior extends MaterialScrollBehavior {
   @override
@@ -52,9 +52,8 @@ class _IntroScreen1State extends State<IntroScreen1> {
                 });
               },
               itemBuilder: (BuildContext context, int index) {
-                return IntroWidget(
+                return IntroWidget1(
                   index: index,
-                  color: pages[index]['color'],
                   title: pages[index]['title'],
                   description: pages[index]['description'],
                   image: pages[index]['image'],
@@ -94,15 +93,6 @@ class _IntroScreen1State extends State<IntroScreen1> {
   }
 
   Widget _indicatorsTrue() {
-    final String color;
-    if (_activePage == 0) {
-      color = '#ffe24e';
-    } else if (_activePage == 1) {
-      color = '#a3e4f1';
-    } else {
-      color = '#31b77a';
-    }
-
     return AnimatedContainer(
       duration: const Duration(microseconds: 300),
       height: 6,
@@ -110,7 +100,7 @@ class _IntroScreen1State extends State<IntroScreen1> {
       margin: const EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50),
-        color: hexToColor(color),
+        color: AppColors.introGreen,
       ),
     );
   }

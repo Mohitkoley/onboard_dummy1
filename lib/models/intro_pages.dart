@@ -2,7 +2,7 @@ import 'package:onboarding/const/resource.dart';
 
 final List<Map<String, dynamic>> pages = [
   {
-    'color': '#ffe24e',
+    'color': '#31b77a',
     'title': 'Studying all day',
     'image': R.ASSETS_SVG_STUDYING_BRO_SVG,
     'description':
@@ -10,7 +10,7 @@ final List<Map<String, dynamic>> pages = [
     'skip': true
   },
   {
-    'color': '#a3e4f1',
+    'color': '#31b77a',
     'title': 'Study by yourself',
     'image': R.ASSETS_SVG_STUDYING_RAFIKI_SVG,
     'description':
