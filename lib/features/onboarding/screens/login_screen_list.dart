@@ -1,21 +1,19 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:onboarding/screens/intro_screens/screen1/intro_screen.dart';
-
-import 'package:onboarding/screens/intro_screens/screen1/intro_screen1.dart';
-import 'package:onboarding/screens/intro_screens/screen2/intro_screen2.dart';
-import 'package:onboarding/screens/intro_screens/screen3/intro_screen3.dart';
+import 'package:onboarding/features/auth/screens/screen1/login_screen1.dart';
+import 'package:onboarding/features/auth/screens/screen2/login_screen2.dart';
+import 'package:onboarding/features/onboarding/screens/intro_screens/screen1/intro_screen.dart';
 
 import 'package:onboarding/utils/utils.dart';
 
-class OnBoardScreensList extends StatefulWidget {
-  const OnBoardScreensList({super.key});
+class LoginScreenList extends StatefulWidget {
+  const LoginScreenList({super.key});
 
   @override
-  State<OnBoardScreensList> createState() => _OnBoardScreensListState();
+  State<LoginScreenList> createState() => _LoginScreenListState();
 }
 
-class _OnBoardScreensListState extends State<OnBoardScreensList> {
+class _LoginScreenListState extends State<LoginScreenList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +29,15 @@ class _OnBoardScreensListState extends State<OnBoardScreensList> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             ScreenButton(
-                title: "intro 1",
+                title: "Login 1",
                 onPressed: () => Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => IntroScreen()))),
+                    MaterialPageRoute(builder: (context) => LoginScreen1()))),
             ScreenButton(
-                title: "intro 2",
-                onPressed: () => context.navigateTo(IntroScreen2())),
-            ScreenButton(
-                title: "intro 3",
-                onPressed: () => context.navigateTo(IntroScreen3())),
+                title: "Login 2",
+                onPressed: () => context.navigateTo(LoginScreen2())),
+            // ScreenButton(
+            //     title: "intro 3",
+            //     onPressed: () => context.navigateTo(IntroScreen())),
           ],
         ),
       ),

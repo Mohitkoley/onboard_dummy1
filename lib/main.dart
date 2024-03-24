@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onboarding/screens/intro_screens/screen1/intro_screen.dart';
+import 'package:onboarding/features/onboarding/screens/intro_screens/screen1/intro_screen.dart';
 import 'package:onboarding/theme/app_theme.dart';
 
 void main() {

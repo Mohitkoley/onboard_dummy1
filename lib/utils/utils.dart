@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 
-class Utils {}
+class Utils {
+  static const double circularAmount = 40;
+
+  static Radius get circle => const Radius.circular(circularAmount);
+}
 
 extension ContextExt on BuildContext {
   double get height => MediaQuery.sizeOf(this).height;

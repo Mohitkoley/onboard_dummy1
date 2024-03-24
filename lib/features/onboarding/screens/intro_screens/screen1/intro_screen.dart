@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:onboarding/models/intro_pages.dart';
-import 'package:onboarding/screens/intro_screens/screen1/intro_widget.dart';
+import 'package:onboarding/features/onboarding/screens/intro_screens/screen1/intro_widget.dart';
 import 'package:onboarding/theme/colors.dart';
 import 'package:onboarding/utils/utils.dart';
 

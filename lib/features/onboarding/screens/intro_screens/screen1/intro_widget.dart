@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:onboarding/features/onboarding/screens/login_screen_list.dart';
 import 'package:onboarding/models/intro_pages.dart';
 import 'package:onboarding/theme/colors.dart';
 import 'package:onboarding/utils/utils.dart';
@@ -111,7 +112,12 @@ class IntroWidget extends StatelessWidget {
                             color: AppColors.introGreen,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(8)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.of(context)
+                                  .push(MaterialPageRoute(builder: (context) {
+                                return LoginScreenList();
+                              }));
+                            },
                             child: const Text('Get Started',
                                 style: TextStyle(color: Colors.white)),
                           ),
